@@ -1,0 +1,34 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 400 1.6rem 'Montserrat';
+}
+
+p {
+  line-height: 2.4rem;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  overflow: hidden;
+  overflow-y: scroll;
+}

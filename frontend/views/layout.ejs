@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cf1679d9f7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <title>Write Down</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav class="nav">
+        <a href="/" class="link">
+          <i class="link__icon fas fa-home"></i>
+          <span class="link__text">Início</span>
+        </a>
+        <a href="/reminders" class="link">
+          <i class="link__icon fas fa-tags"></i>
+          <span class="link__text">Lembretes</span>
+        </a>
+        <a href="/projects" class="link">
+          <i class="link__icon fas fa-thumbtack"></i>
+          <span class="link__text">Projetos</span>
+        </a>
+      </nav>
+      <main class="main"><%- body %></main>
+    </div>
+  </body>
+</html>

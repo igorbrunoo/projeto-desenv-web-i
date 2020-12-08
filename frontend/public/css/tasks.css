@@ -1,0 +1,17 @@
+.tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tasks__form {
+  width: 40rem;
+}
+
+.tasks__list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

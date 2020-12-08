@@ -1,0 +1,35 @@
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  color: white;
+
+  transition: 0.2s;
+}
+
+.tag--urgent {
+  border: 1px solid #e63232;
+  color: #e63232;
+}
+
+.tag--important {
+  border: 1px solid #ed8c32;
+  color: #ed8c32;
+}
+
+.tag--urgent.selected,
+.tag--urgent:hover {
+  background: #e63232;
+  color: #fff;
+}
+
+.tag--important.selected,
+.tag--important:hover {
+  background: #ed8c32;
+  color: #fff;
+}

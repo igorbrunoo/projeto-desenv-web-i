@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/item.css" />
+<article
+  class="item item--d-vertical <%= item.isCompleted ? 'item--completed' : ''; %>"
+  title="<%= item.name %>"
+>
+  <h1 class="item__title"><%= item.name %></h1>
+  <div class="item__actions">
+    <button class="btn">
+      <i class="fas fa-check" onclick="handleCheckItem(<%= item.id %>)"></i>
+    </button>
+    <button class="btn">
+      <i
+        class="fas fa-trash-alt"
+        onclick="handleDeleteItem(<%= item.id %>)"
+      ></i>
+    </button>
+  </div>
+</article>

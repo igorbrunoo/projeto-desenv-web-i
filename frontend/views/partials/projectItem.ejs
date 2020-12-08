@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/item.css" />
+<article
+  class="item <%= project.isCompleted ? 'item--completed' : ''; %>"
+  title="<%= project.name %>"
+  onclick="handleItemClick(<%= project.id %>)"
+>
+  <div class="item__content">
+    <div class="item__priority">
+      <% if(project.isUrgent) { %>
+      <div class="item__is-urgent" title="Urgente"></div>
+      <% } %> <% if(project.isImportant) { %>
+      <div class="item__is-important" title="Importante"></div>
+      <% } %>
+    </div>
+    <h1 class="item__title"><%= project.name %></h1>
+    <% if(project.description) { %>
+    <p class="item__description"><%= project.description %></p>
+    <% } %> <% if(project.deadline) { %>
+    <p class="item__deadline">Data limite: <%= project.deadline %></p>
+    <% } %>
+  </div>
+  <div class="item__actions">
+    <button class="btn" onclick="handleCheckItem(<%= project.id %>)">
+      <i class="fas fa-check"></i>
+    </button>
+    <button class="btn" onclick="handleDeleteItem(<%= project.id %>)">
+      <i class="fas fa-trash-alt"></i>
+    </button>
+    <button
+      class="btn"
+      onclick="handleEditItem(<%= JSON.stringify(project) %>)"
+    >
+      <i class="fas fa-edit"></i>
+    </button>
+  </div>
+</article>

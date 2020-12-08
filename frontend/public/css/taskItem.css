@@ -1,0 +1,32 @@
+.item {
+  cursor: pointer;
+  padding: 1.2rem 2rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #0008;
+  border: 1px solid #0002;
+  border-radius: 1rem;
+
+  transition: 0.1s;
+}
+
+.item:hover {
+  border-color: #0002;
+  transform: translate(3px, -3px);
+
+  box-shadow: 0px 0px 5px 0px #0002;
+  color: #000e;
+}
+
+.item__title {
+  font-size: 2rem;
+  font-weight: 600;
+
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

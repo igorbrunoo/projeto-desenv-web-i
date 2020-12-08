@@ -1,0 +1,32 @@
+.form {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.input-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.input__label {
+  color: #000d;
+  font-weight: 600;
+  padding: 0.8rem;
+}
+
+.input__field {
+  border: 1px solid #0002;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  outline: none;
+  transition-duration: 0.1s;
+}
+
+.input__field:focus,
+.input__field:hover {
+  transform: scale(1.05);
+}

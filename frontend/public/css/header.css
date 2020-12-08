@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  padding: 1rem 1.6rem;
+
+  font-size: 1.4rem;
+}

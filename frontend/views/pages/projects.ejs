@@ -1,0 +1,75 @@
+<%- contentFor('body') %>
+
+<link rel="stylesheet" href="/css/button.css" />
+<link rel="stylesheet" href="/css/form.css" />
+<link rel="stylesheet" href="/css/modal.css" />
+<link rel="stylesheet" href="/css/projects.css" />
+<link rel="stylesheet" href="/css/tag.css">
+<%- include('../partials/header.ejs', {title:
+'Projetos', description: 'Crie e organize seus projetos.'}) %>
+<div class="projects">
+    <div class="modal-wrapper">
+      <button class="btn btn--d-vertical btn--f-width" onclick="showModal()"><i class="fas fa-plus"></i>Novo</button>
+      <div class="modal__container">
+        <div class="modal">
+          <button class="btn btn--no-bg modal__close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+          <form class="form" action="/projects" method="POST">
+            <div class="input-wrapper">
+              <label class="input__label">Nome do Projeto</label>
+              <input
+                class="input__field"
+                required
+                autocomplete="off"
+                name="name"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label class="input__label">Descrição do Projeto</label>
+              <input
+                class="input__field"
+                required
+                autocomplete="off"
+                name="description"
+              />
+            </div>
+            <div class="form__row">
+              <div class="tag tag--urgent" 
+              title="Projetos que possuem prazo limite"
+              name="isUrgent"
+              value=""
+              onclick="onPriorityChange(this)">
+                Urgente
+              </div>
+              <div class="tag tag--important "
+              title="Projetos que resultam em grandes benefícios"
+              name="isImportant"
+              value=""
+              onclick="onPriorityChange(this)">
+                Importante
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label class="input__label">Prazo limite</label>
+              <input
+                class="input__field"
+                disabled
+                autocomplete="off"
+                name="deadline"
+                type="date"
+              />
+            </div>
+            <button class="btn form__submit" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <ul class="projects__list">
+      <% projects.forEach((project) => { %>
+        <%- include('../partials/projectItem.ejs', { project: project }) %>
+      <% }) %>
+    </ul>
+  </div>
+</div>
+
+<script src="/js/createElement.js"></script>
+<script src="/js/projects.js"></script>

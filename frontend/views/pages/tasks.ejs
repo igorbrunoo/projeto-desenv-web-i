@@ -1,0 +1,26 @@
+<%- contentFor('body') %> <%- include('../partials/header.ejs', {title:
+project.name, description: project.description}) %>
+
+<link rel="stylesheet" href="/css/tasks.css" />
+<link rel="stylesheet" href="/css/form.css" />
+<link rel="stylesheet" href="/css/button.css" />
+
+<div class="tasks">
+  <form
+    class="tasks__form form"
+    action="/projects/<%= project.id %>/tasks"
+    method="POST"
+  >
+    <div class="input-wrapper">
+      <label class="input__label">Adicionar Tarefa</label>
+      <input class="input__field" required autocomplete="off" name="name" />
+    </div>
+    <button class="btn form__submit" type="submit">Adicionar</button>
+  </form>
+  <ul class="tasks__list">
+    <% project.tasks.forEach((task) => { %> <%-
+    include('../partials/taskItem.ejs', { item: task }) %> <% }) %>
+  </ul>
+</div>
+
+<script src="/js/tasks.js"></script>

@@ -1,0 +1,22 @@
+<%- contentFor('body') %> <%- include('../partials/header.ejs', {title:
+'Lembretes', description: 'Esqueça a Alzheimer.'}) %>
+
+<link rel="stylesheet" href="/css/form.css" />
+<link rel="stylesheet" href="/css/button.css" />
+<link rel="stylesheet" href="/css/reminders.css" />
+
+<div class="reminders">
+  <form class="form reminders__form" action="/reminders" method="POST">
+    <div class="input-wrapper">
+      <label class="input__label">Lembrete</label>
+      <input class="input__field" required autocomplete="off" name="name" />
+    </div>
+    <button class="btn form__submit" type="submit">Adicionar</button>
+  </form>
+  <section class="reminders__list">
+    <% reminders.forEach((reminder) => { %> <%-
+    include('../partials/simpleItem.ejs', { item: reminder }) %> <% }) %>
+  </section>
+</div>
+
+<script src="/js/reminders.js"></script>
